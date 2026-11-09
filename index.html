@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprende la sintaxis de JavaScript con ocho laboratorios: conceptos, ejemplos interactivos y código comentado. Tarea 5 de ISW-512.">
+  <meta name="theme-color" content="#20241f">
+  <link rel="icon" href="assets/img/favicon.png" type="image/svg+xml">
+  <title>JavaScript en práctica | Tarea 5</title>
+  <!-- Bootstrap se incluye localmente. Los estilos propios están en styles.css. -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <div id="wdm-app">
+    <a class="wdm-skip" href="#contenido">Saltar al contenido</a>
+
+    <!-- Menú superior: enlaces HTML normales, sin eventos de JavaScript. -->
+    <header class="wdm-header">
+      <div class="wdm-header-top">
+        <a class="wdm-brand" href="#inicio" aria-label="JavaScript en práctica, inicio">
+          <span class="wdm-brand-icon" aria-hidden="true">JS</span>
+          <span class="wdm-brand-name">JavaScript<span>en práctica</span></span>
+        </a>
+        <p class="wdm-header-course">Diseño de Aplicaciones Web<span>ISW-512 · Tarea 5</span></p>
+      </div>
+      <nav class="wdm-nav" aria-label="Temas de JavaScript">
+        <a class="wdm-nav-link" href="#control">Control de flujo</a>
+        <a class="wdm-nav-link" href="#bucles">Bucles e iteración</a>
+        <a class="wdm-nav-link" href="#funciones">Funciones</a>
+        <a class="wdm-nav-link" href="#operadores">Operadores</a>
+        <a class="wdm-nav-link" href="#numeros-fechas">Números y fechas</a>
+        <a class="wdm-nav-link" href="#texto">Formateo de texto</a>
+        <a class="wdm-nav-link" href="#colecciones">Colecciones indexadas</a>
+        <a class="wdm-nav-link" href="#dom">El DOM</a>
+        <a class="wdm-nav-link" href="#referencias">Referencias</a>
+      </nav>
+    </header>
+
+    <main id="contenido" class="wdm-main">
+      <section id="inicio" class="wdm-hero" aria-labelledby="titulo">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-xl-7">
+            <p class="wdm-eyebrow"><span></span>GUÍA INTERACTIVA · TAREA 5</p>
+            <h1 id="titulo">Del código<br>a la <span>acción.</span></h1>
+            <p class="wdm-hero-description">La sintaxis de JavaScript se entiende mejor cuando la ves funcionar. Explora los conceptos, cambia los datos y descubre el resultado.</p>
+            <a class="wdm-hero-button" href="#control">Comenzar a explorar <span aria-hidden="true">↗</span></a>
+            <div class="wdm-hero-facts"><span>08 temas</span><span>Código comentado</span><span>Ejemplos en vivo</span></div>
+          </div>
+          <div class="col-12 col-xl-5">
+            <div class="wdm-hero-code" aria-label="Ejemplo introductorio de JavaScript">
+              <div class="wdm-code-top"><span><i></i><i></i><i></i></span><span>primer-paso.js</span><span>JS</span></div>
+              <pre><code><span class="wdm-comment">// Todo empieza con una idea.</span>
+<span class="wdm-keyword">function</span> <span class="wdm-code-function">aprender</span>(lenguaje) {
+  <span class="wdm-keyword">return</span> <span class="wdm-string">`¡Hola, ${lenguaje}!`</span>;
+}
+
+<span class="wdm-comment">// Y una llamada a la acción.</span>
+<span class="wdm-code-function">aprender</span>(<span class="wdm-string">"JavaScript"</span>);</code></pre>
+              <div class="wdm-hero-console"><span>↳ RESULTADO</span><strong>¡Hola, JavaScript!<span class="wdm-cursor" aria-hidden="true">▌</span></strong></div>
+            </div>
+            <p class="wdm-hero-caption"><span aria-hidden="true">↳</span> Cada concepto, una pequeña prueba.</p>
+          </div>
+        </div>
+        <div class="wdm-how"><span><b>01</b> Lee el concepto</span><span><b>02</b> Prueba el ejemplo</span><span><b>03</b> Revisa el código</span><span class="wdm-how-arrow" aria-hidden="true">↓</span></div>
+      </section>
+
+      <noscript><p class="wdm-noscript">Activa JavaScript para ejecutar los ejemplos. Puedes seguir leyendo los conceptos y consultar el archivo assets/js/app.js.</p></noscript>
+
+      <!-- 01. if...else, switch, try/catch/throw y objetos Error. -->
+      <section id="control" class="wdm-section" aria-labelledby="tituloControl">
+        <header class="wdm-section-header"><span class="wdm-section-number">01</span><div><p class="wdm-eyebrow">DECIDIR Y RESPONDER</p><h2 id="tituloControl">Control de flujo y errores</h2></div><span class="wdm-section-symbol" aria-hidden="true">{ }</span></header>
+        <div class="wdm-content">
+          <p class="wdm-intro">Un programa toma decisiones según sus datos. Si algo falla, puede explicar el problema y permitir que lo corrijas.</p>
+          <dl class="wdm-concepts">
+            <div><dt><code>if...else</code></dt><dd>Ejecuta un bloque si la condición es verdadera y otro si es falsa. Aquí decide si la edad permite una inscripción de práctica.</dd></div>
+            <div><dt><code>switch</code></dt><dd>Compara un valor con varios casos. Aquí el curso elegido determina el mensaje; <code>break</code> termina cada caso.</dd></div>
+            <div><dt><code>try / catch / throw</code></dt><dd><code>try</code> intenta ejecutar; <code>throw</code> lanza un problema; <code>catch</code> lo captura para mostrarlo.</dd></div>
+            <div><dt>Objetos <code>Error</code></dt><dd>Describen errores con propiedades como <code>name</code> y <code>message</code>. <code>RangeError</code> identifica un valor fuera del rango permitido.</dd></div>
+          </dl>
+          <div class="wdm-lab"><div class="wdm-lab-heading"><span><i></i> PRUÉBALO EN VIVO</span><span>Inscripción de práctica</span></div>
+            <div class="row g-0">
+              <div class="col-12 col-lg-6 wdm-demo">
+                <form id="formControl" class="wdm-form" novalidate>
+                  <div class="row g-3"><div class="col-5"><label for="edad" class="wdm-label">Edad</label><input id="edad" class="form-control wdm-input" type="text" inputmode="numeric" value="20" maxlength="12" aria-describedby="ayudaEdad"></div><div class="col-7"><label for="curso" class="wdm-label">Curso</label><select id="curso" class="form-select wdm-input"><option value="javascript">JavaScript</option><option value="html">HTML</option><option value="css">CSS</option></select></div></div>
+                  <p id="ayudaEdad" class="wdm-hint">Prueba con 16, 20 o un texto como «hola».</p>
+                  <div class="wdm-actions"><button class="btn wdm-button" type="submit">Verificar inscripción <span aria-hidden="true">→</span></button><button id="provocarError" class="btn wdm-button-light" type="button">Probar un error</button></div>
+                </form>
+              </div>
+              <div class="col-12 col-lg-6 wdm-result" aria-live="polite" aria-atomic="true"><p class="wdm-result-label">SALIDA DEL PROGRAMA</p><pre id="resultadoControl" class="wdm-output">Todo listo.
+Verifica la inscripción para ver qué camino toma el código.</pre></div>
+            </div>
+          </div>
+          <details class="wdm-code"><summary><span><b aria-hidden="true">&lt;/&gt;</b> Ver el código comentado</span><span aria-hidden="true">+</span></summary><div class="wdm-code-body"><div class="wdm-code-toolbar"><span>app.js · evaluarInscripcion()</span><button class="wdm-copy" type="button" data-copy="codigoControl">Copiar código</button></div><pre><code id="codigoControl"></code></pre></div></details>
+          <p class="wdm-takeaway"><strong>Observa:</strong> un dato inválido llega a <code>catch</code>; una edad menor de 18 llega a <code>else</code>. Son caminos diferentes. La regla de edad es solo ilustrativa.</p>
+        </div>
+      </section>
+
+      <!-- 02. La diferencia entre comprobar la condición antes o después. -->
+      <section id="bucles" class="wdm-section" aria-labelledby="tituloBucles">
+        <header class="wdm-section-header"><span class="wdm-section-number">02</span><div><p class="wdm-eyebrow">REPETIR CON INTENCIÓN</p><h2 id="tituloBucles">Bucles e iteración</h2></div><span class="wdm-section-symbol" aria-hidden="true">↻</span></header>
+        <div class="wdm-content">
+          <p class="wdm-intro">Un bucle repite instrucciones. La posición de su condición cambia cuándo comienza y cuándo termina.</p>
+          <dl class="wdm-concepts wdm-concepts-three"><div><dt><code>for</code></dt><dd>Reúne inicio, condición y actualización. Es útil cuando conoces cuántas repeticiones necesitas.</dd></div><div><dt><code>while</code></dt><dd>Comprueba la condición antes de cada vuelta. Si comienza siendo falsa, no ejecuta ninguna.</dd></div><div><dt><code>do...while</code></dt><dd>Comprueba la condición después del bloque: ejecuta al menos una vuelta.</dd></div></dl>
+          <div class="wdm-lab"><div class="wdm-lab-heading"><span><i></i> PRUÉBALO EN VIVO</span><span>Tres caminos, un contador</span></div><div class="row g-0"><div class="col-12 col-lg-5 wdm-demo"><form id="formBucles" class="wdm-form" novalidate><label class="wdm-label" for="limite">Límite del contador</label><input class="form-control wdm-input" id="limite" type="number" min="0" max="12" step="1" value="5" aria-describedby="ayudaLimite"><p id="ayudaLimite" class="wdm-hint">De 0 a 12. Usa 0 para descubrir la diferencia de <code>do...while</code>.</p><div class="wdm-actions"><button class="btn wdm-button" type="submit">Comparar bucles <span aria-hidden="true">→</span></button></div></form></div><div class="col-12 col-lg-7 wdm-result" aria-live="polite" aria-atomic="true"><p class="wdm-result-label">SECUENCIAS GENERADAS</p><div class="wdm-loop-results"><div><span>for</span><p id="salidaFor">—</p></div><div><span>while</span><p id="salidaWhile">—</p></div><div><span>do...while</span><p id="salidaDo">—</p></div></div><p id="resultadoBucles" class="wdm-result-note">El contador comienza en 1 en los tres casos.</p></div></div></div>
+          <details class="wdm-code"><summary><span><b aria-hidden="true">&lt;/&gt;</b> Ver el código comentado</span><span aria-hidden="true">+</span></summary><div class="wdm-code-body"><div class="wdm-code-toolbar"><span>app.js · compararBucles()</span><button class="wdm-copy" type="button" data-copy="codigoBucles">Copiar código</button></div><pre><code id="codigoBucles"></code></pre></div></details>
+          <p class="wdm-takeaway"><strong>Observa:</strong> cada bucle incrementa su contador para que pueda terminar. Un bucle cuya condición nunca deja de cumplirse puede bloquear la página.</p>
+        </div>
+      </section>
+
+      <!-- 03. Definición, parámetros, retorno y llamada a una función. -->
+      <section id="funciones" class="wdm-section" aria-labelledby="tituloFunciones">
+        <header class="wdm-section-header"><span class="wdm-section-number">03</span><div><p class="wdm-eyebrow">ESCRIBIR UNA VEZ, REUTILIZAR</p><h2 id="tituloFunciones">Funciones</h2></div><span class="wdm-section-symbol" aria-hidden="true">ƒ(x)</span></header>
+        <div class="wdm-content"><p class="wdm-intro">Una función agrupa instrucciones bajo un nombre. Recibe parámetros, trabaja con ellos y puede devolver un resultado con <code>return</code>.</p>
+          <dl class="wdm-concepts"><div><dt>Definir una función</dt><dd><code>function calcularTotal(precio, cantidad)</code> declara el nombre y sus dos parámetros.</dd></div><div><dt>Llamar una función</dt><dd><code>calcularTotal(2500, 3)</code> la ejecuta con dos argumentos. Su valor de retorno es <code>7500</code>.</dd></div></dl>
+          <div class="wdm-lab"><div class="wdm-lab-heading"><span><i></i> PRUÉBALO EN VIVO</span><span>Una función, distintos pedidos</span></div><div class="row g-0"><div class="col-12 col-lg-6 wdm-demo"><form id="formFunciones" class="wdm-form" novalidate><div class="row g-3"><div class="col-7"><label class="wdm-label" for="precio">Precio unitario (₡)</label><input class="form-control wdm-input" id="precio" type="number" min="0" max="1000000000" step="0.01" value="2500"></div><div class="col-5"><label class="wdm-label" for="cantidad">Cantidad</label><input class="form-control wdm-input" id="cantidad" type="number" min="1" max="1000" step="1" value="3"></div></div><p class="wdm-hint">Cambia los argumentos; la función sigue siendo la misma.</p><div class="wdm-actions"><button class="btn wdm-button" type="submit">Llamar la función <span aria-hidden="true">→</span></button></div></form></div><div class="col-12 col-lg-6 wdm-result" aria-live="polite" aria-atomic="true"><p class="wdm-result-label">VALOR DE RETORNO</p><pre id="resultadoFunciones" class="wdm-output">calcularTotal(precio, cantidad)
+Esperando los argumentos…</pre></div></div></div>
+          <details class="wdm-code"><summary><span><b aria-hidden="true">&lt;/&gt;</b> Ver el código comentado</span><span aria-hidden="true">+</span></summary><div class="wdm-code-body"><div class="wdm-code-toolbar"><span>app.js · calcularTotal()</span><button class="wdm-copy" type="button" data-copy="codigoFunciones">Copiar código</button></div><pre><code id="codigoFunciones"></code></pre></div></details>
+          <p class="wdm-takeaway"><strong>Observa:</strong> definir la función no la ejecuta. La llamada con paréntesis activa sus instrucciones.</p>
+        </div>
+      </section>
+
+      <!-- 04. Asignación, comparación, aritmética y lógica. -->
+      <section id="operadores" class="wdm-section" aria-labelledby="tituloOperadores">
+        <header class="wdm-section-header"><span class="wdm-section-number">04</span><div><p class="wdm-eyebrow">RELACIONAR LOS DATOS</p><h2 id="tituloOperadores">Expresiones y operadores</h2></div><span class="wdm-section-symbol" aria-hidden="true">+=</span></header>
+        <div class="wdm-content"><p class="wdm-intro">Una expresión produce un valor. Los operadores permiten asignar datos, calcular y combinar condiciones.</p>
+          <dl class="wdm-concepts"><div><dt>Asignación</dt><dd><code>=</code> guarda un valor; <code>+=</code> suma y reasigna. <code>let total = a; total += b;</code> termina con <code>a + b</code>.</dd></div><div><dt>Comparación</dt><dd><code>===</code> compara valor y tipo; <code>==</code> permite conversión. <code>!==</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code> y <code>&lt;=</code> también producen booleanos.</dd></div><div><dt>Aritméticos</dt><dd><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> y <code>**</code> suman, restan, multiplican, dividen, calculan el resto y elevan a una potencia.</dd></div><div><dt>Lógicos</dt><dd>Con operandos booleanos, <code>&amp;&amp;</code> exige ambas condiciones, <code>||</code> al menos una y <code>!</code> invierte el valor.</dd></div></dl>
+          <div class="wdm-lab"><div class="wdm-lab-heading"><span><i></i> PRUÉBALO EN VIVO</span><span>El pequeño comparador</span></div><div class="row g-0"><div class="col-12 col-lg-5 wdm-demo"><form id="formOperadores" class="wdm-form" novalidate><div class="row g-3"><div class="col-6"><label for="valorA" class="wdm-label">Número A</label><input id="valorA" class="form-control wdm-input" type="number" min="-100" max="100" step="1" value="10"></div><div class="col-6"><label for="valorB" class="wdm-label">Número B</label><input id="valorB" class="form-control wdm-input" type="number" min="-100" max="100" step="1" value="3"></div></div><p class="wdm-hint">Enteros de −100 a 100. Prueba B = 0 o dos valores iguales.</p><div class="wdm-actions"><button class="btn wdm-button" type="submit">Evaluar expresiones <span aria-hidden="true">→</span></button></div></form></div><div class="col-12 col-lg-7 wdm-result" aria-live="polite" aria-atomic="true"><p class="wdm-result-label">EXPRESIÓN → VALOR</p><pre id="resultadoOperadores" class="wdm-output">Introduce dos números y observa
+qué resultado produce cada operador.</pre></div></div></div>
+          <details class="wdm-code"><summary><span><b aria-hidden="true">&lt;/&gt;</b> Ver el código comentado</span><span aria-hidden="true">+</span></summary><div class="wdm-code-body"><div class="wdm-code-toolbar"><span>app.js · explorarOperadores()</span><button class="wdm-copy" type="button" data-copy="codigoOperadores">Copiar código</button></div><pre><code id="codigoOperadores"></code></pre></div></details>
+          <p class="wdm-takeaway"><strong>Observa:</strong> <code>5 == "5"</code> es <code>true</code>, pero <code>5 === "5"</code> es <code>false</code>. El segundo caso compara también los tipos.</p>
+        </div>
+      </section>
+
+      <!-- 05. Number, Math y Date con entradas controladas. -->
+      <section id="numeros-fechas" class="wdm-section" aria-labelledby="tituloNumeros">
+        <header class="wdm-section-header"><span class="wdm-section-number">05</span><div><p class="wdm-eyebrow">MEDIR Y UBICAR EN EL TIEMPO</p><h2 id="tituloNumeros">Números y fechas</h2></div><span class="wdm-section-symbol" aria-hidden="true">123</span></header>
+        <div class="wdm-content"><p class="wdm-intro">JavaScript incluye herramientas para convertir números, hacer operaciones matemáticas y representar fechas.</p>
+          <dl class="wdm-concepts wdm-concepts-three"><div><dt><code>Number</code></dt><dd><code>Number(texto)</code> convierte un texto. <code>Number.isFinite()</code> verifica el resultado y <code>toFixed(2)</code> devuelve un texto con dos decimales.</dd></div><div><dt><code>Math</code></dt><dd>Ofrece operaciones como <code>round</code>, <code>floor</code>, <code>ceil</code>, <code>abs</code> y <code>sqrt</code>. Se usa directamente, sin <code>new</code>.</dd></div><div><dt><code>Date</code></dt><dd><code>new Date()</code> crea una fecha. Sus métodos permiten consultar año, mes y día. Los meses de su constructor numérico van de 0 a 11.</dd></div></dl>
+          <div class="wdm-lab"><div class="wdm-lab-heading"><span><i></i> PRUÉBALO EN VIVO</span><span>Un número y una fecha</span></div><div class="row g-0"><div class="col-12 col-lg-5 wdm-demo"><form id="formNumeros" class="wdm-form" novalidate><label for="numero" class="wdm-label">Número decimal</label><input id="numero" class="form-control wdm-input" type="text" inputmode="decimal" maxlength="24" value="12.75" aria-describedby="ayudaNumero"><p id="ayudaNumero" class="wdm-hint">Puedes usar punto o coma decimal.</p><label for="fecha" class="wdm-label">Fecha del calendario</label><input id="fecha" class="form-control wdm-input" type="date" value="2026-11-08" min="1900-01-01" max="2100-12-31"><div class="wdm-actions"><button class="btn wdm-button" type="submit">Explorar objetos <span aria-hidden="true">→</span></button></div></form></div><div class="col-12 col-lg-7 wdm-result" aria-live="polite" aria-atomic="true"><p class="wdm-result-label">NUMBER · MATH · DATE</p><pre id="resultadoNumeros" class="wdm-output">Convierte, redondea y consulta
+los componentes de una fecha.</pre></div></div></div>
+          <details class="wdm-code"><summary><span><b aria-hidden="true">&lt;/&gt;</b> Ver el código comentado</span><span aria-hidden="true">+</span></summary><div class="wdm-code-body"><div class="wdm-code-toolbar"><span>app.js · explorarObjetos()</span><button class="wdm-copy" type="button" data-copy="codigoNumeros">Copiar código</button></div><pre><code id="codigoNumeros"></code></pre></div></details>
+          <p class="wdm-takeaway"><strong>Observa:</strong> <code>Math.floor(-2.5)</code> da <code>-3</code>. Construimos la fecha con sus componentes locales para conservar el día elegido en el calendario.</p>
+        </div>
+      </section>
+
+      <!-- 06. Cadenas literales, plantillas y métodos String. -->
+      <section id="texto" class="wdm-section" aria-labelledby="tituloTexto">
+        <header class="wdm-section-header"><span class="wdm-section-number">06</span><div><p class="wdm-eyebrow">DAR FORMA A LAS PALABRAS</p><h2 id="tituloTexto">Formateo de texto</h2></div><span class="wdm-section-symbol" aria-hidden="true">Aa</span></header>
+        <div class="wdm-content"><p class="wdm-intro">Las cadenas guardan texto. Podemos combinarlo con datos, limpiarlo y transformarlo sin modificar la cadena original.</p>
+          <dl class="wdm-concepts"><div><dt>Cadenas literales</dt><dd>Se escriben con comillas simples, dobles o acentos graves. Una plantilla como <code>`Hola, ${nombre}`</code> inserta el valor de una expresión.</dd></div><div><dt><code>String</code> y sus métodos</dt><dd><code>String(valor)</code> convierte a texto. <code>trim()</code>, <code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>includes()</code> y <code>slice()</code> permiten trabajarlo.</dd></div></dl>
+          <div class="wdm-lab"><div class="wdm-lab-heading"><span><i></i> PRUÉBALO EN VIVO</span><span>Un saludo con tu nombre</span></div><div class="row g-0"><div class="col-12 col-lg-5 wdm-demo"><form id="formTexto" class="wdm-form" novalidate><label for="nombre" class="wdm-label">Tu nombre</label><input id="nombre" class="form-control wdm-input" type="text" maxlength="60" value="  Andrés  " autocomplete="given-name" aria-describedby="ayudaNombre"><p id="ayudaNombre" class="wdm-hint">Agrega espacios al inicio o al final para probar <code>trim()</code>.</p><div class="wdm-actions"><button class="btn wdm-button" type="submit">Transformar texto <span aria-hidden="true">→</span></button></div></form></div><div class="col-12 col-lg-7 wdm-result" aria-live="polite" aria-atomic="true"><p class="wdm-result-label">EL MISMO TEXTO, OTRAS FORMAS</p><pre id="resultadoTexto" class="wdm-output">Tu nombre será el argumento
+de esta pequeña transformación.</pre></div></div></div>
+          <details class="wdm-code"><summary><span><b aria-hidden="true">&lt;/&gt;</b> Ver el código comentado</span><span aria-hidden="true">+</span></summary><div class="wdm-code-body"><div class="wdm-code-toolbar"><span>app.js · transformarTexto()</span><button class="wdm-copy" type="button" data-copy="codigoTexto">Copiar código</button></div><pre><code id="codigoTexto"></code></pre></div></details>
+          <p class="wdm-takeaway"><strong>Observa:</strong> un texto primitivo como <code>"Hola"</code> puede usar métodos de <code>String</code>. No necesitas crear un objeto con <code>new String()</code>.</p>
+        </div>
+      </section>
+
+      <!-- 07. Array frente a una vista numérica Uint8Array. -->
+      <section id="colecciones" class="wdm-section" aria-labelledby="tituloColecciones">
+        <header class="wdm-section-header"><span class="wdm-section-number">07</span><div><p class="wdm-eyebrow">ORGANIZAR MUCHOS VALORES</p><h2 id="tituloColecciones">Colecciones indexadas</h2></div><span class="wdm-section-symbol" aria-hidden="true">[ ]</span></header>
+        <div class="wdm-content"><p class="wdm-intro">Una colección indexada permite acceder a sus elementos por posición. El primer índice es <code>0</code>.</p>
+          <dl class="wdm-concepts"><div><dt>Arreglos: <code>Array</code></dt><dd>Pueden crecer y contener distintos tipos. Aquí usamos <code>push()</code>, <code>map()</code>, <code>filter()</code> y <code>reduce()</code> con una lista de números.</dd></div><div><dt>Arreglos tipados: <code>Uint8Array</code></dt><dd>Son vistas de datos binarios con un tipo numérico concreto. Esta vista almacena enteros sin signo de 8 bits: de 0 a 255; no es un <code>Array</code> normal.</dd></div></dl>
+          <div class="wdm-lab"><div class="wdm-lab-heading"><span><i></i> PRUÉBALO EN VIVO</span><span>Una lista, dos representaciones</span></div><div class="row g-0"><div class="col-12 col-lg-5 wdm-demo"><form id="formColecciones" class="wdm-form" novalidate><label for="lista" class="wdm-label">Números separados por comas</label><input id="lista" class="form-control wdm-input" type="text" maxlength="180" value="10, 20, 260, -1" aria-describedby="ayudaLista"><p id="ayudaLista" class="wdm-hint">Hasta 12 enteros de −1000 a 1000. Observa qué ocurre con 260 y −1.</p><div class="wdm-actions"><button class="btn wdm-button" type="submit">Recorrer colecciones <span aria-hidden="true">→</span></button></div></form></div><div class="col-12 col-lg-7 wdm-result" aria-live="polite" aria-atomic="true"><p class="wdm-result-label">ÍNDICES, TRANSFORMACIONES Y BYTES</p><pre id="resultadoColecciones" class="wdm-output">Array conserva los números.
+Uint8Array los convierte a valores de 8 bits.</pre></div></div></div>
+          <details class="wdm-code"><summary><span><b aria-hidden="true">&lt;/&gt;</b> Ver el código comentado</span><span aria-hidden="true">+</span></summary><div class="wdm-code-body"><div class="wdm-code-toolbar"><span>app.js · explorarColecciones()</span><button class="wdm-copy" type="button" data-copy="codigoColecciones">Copiar código</button></div><pre><code id="codigoColecciones"></code></pre></div></details>
+          <p class="wdm-takeaway"><strong>Observa:</strong> en <code>Uint8Array</code>, 260 se convierte en 4 y −1 en 255 por conversión a 8 bits. No se rechazan automáticamente los valores fuera de rango.</p>
+        </div>
+      </section>
+
+      <!-- 08. Las cinco formas de encontrar elementos exigidas por la tarea. -->
+      <section id="dom" class="wdm-section" aria-labelledby="tituloDom">
+        <header class="wdm-section-header"><span class="wdm-section-number">08</span><div><p class="wdm-eyebrow">CONECTAR EL CÓDIGO CON LA PÁGINA</p><h2 id="tituloDom">El DOM</h2></div><span class="wdm-section-symbol" aria-hidden="true">&lt;/&gt;</span></header>
+        <div class="wdm-content"><p class="wdm-intro">El Document Object Model representa el HTML como objetos conectados. JavaScript encuentra esos objetos y cambia su contenido, sus clases o sus atributos.</p>
+          <div class="wdm-table-wrap"><table class="wdm-table"><caption>Las cinco formas de búsqueda del ejercicio</caption><thead><tr><th scope="col">Buscar por</th><th scope="col">Método o colección</th><th scope="col">Devuelve</th></tr></thead><tbody><tr><th scope="row">ID</th><td><code>getElementById("domTitulo")</code></td><td>Un elemento o <code>null</code></td></tr><tr><th scope="row">Etiqueta</th><td><code>panel.getElementsByTagName("p")</code></td><td>Una <code>HTMLCollection</code></td></tr><tr><th scope="row">Clase</th><td><code>panel.getElementsByClassName("wdm-dom-item")</code></td><td>Una <code>HTMLCollection</code></td></tr><tr><th scope="row">Selector CSS</th><td><code>document.querySelectorAll("#domPanel .wdm-dom-item")</code></td><td>Una <code>NodeList</code> estática</td></tr><tr><th scope="row">Colecciones HTML</th><td><code>document.forms.namedItem("formDom")</code></td><td>Un formulario; <code>form.elements</code> reúne sus controles</td></tr></tbody></table></div>
+          <div class="wdm-lab"><div class="wdm-lab-heading"><span><i></i> PRUÉBALO EN VIVO</span><span>Encuentra y modifica elementos</span></div><div class="row g-0"><div class="col-12 col-lg-6 wdm-demo"><form id="formDom" name="formDom" class="wdm-form" novalidate><label for="nuevoTitulo" class="wdm-label">Nuevo título del panel</label><input id="nuevoTitulo" name="nuevoTitulo" class="form-control wdm-input" type="text" value="¡El DOM está vivo!" maxlength="80"><fieldset class="wdm-methods"><legend>Forma de encontrarlo</legend><label><input type="radio" name="metodo" value="id" checked> ID</label><label><input type="radio" name="metodo" value="etiqueta"> Etiqueta</label><label><input type="radio" name="metodo" value="clase"> Clase</label><label><input type="radio" name="metodo" value="selector"> Selector CSS</label><label><input type="radio" name="metodo" value="coleccion"> Colección HTML</label></fieldset><div class="wdm-actions"><button class="btn wdm-button" type="submit">Aplicar al DOM <span aria-hidden="true">→</span></button><button id="restaurarDom" class="btn wdm-button-light" type="button">Restaurar</button></div></form></div><div class="col-12 col-lg-6 wdm-result"><p class="wdm-result-label">ESTE ES TU HTML EN VIVO</p><div id="domPanel" class="wdm-dom-panel"><h3 id="domTitulo">Mi panel de práctica</h3><p class="wdm-dom-item">Primer elemento</p><p class="wdm-dom-item">Segundo elemento</p><p class="wdm-dom-description">Encuentra elementos y observa el cambio.</p></div><pre id="resultadoDom" class="wdm-output wdm-output-small" aria-live="polite" aria-atomic="true">Selecciona un método para ver qué encuentra.</pre></div></div></div>
+          <details class="wdm-code"><summary><span><b aria-hidden="true">&lt;/&gt;</b> Ver el código comentado</span><span aria-hidden="true">+</span></summary><div class="wdm-code-body"><div class="wdm-code-toolbar"><span>app.js · explorarDOM()</span><button class="wdm-copy" type="button" data-copy="codigoDom">Copiar código</button></div><pre><code id="codigoDom"></code></pre></div></details>
+          <p class="wdm-takeaway"><strong>Observa:</strong> <code>querySelector()</code> encuentra solo el primer resultado. <code>getElementsByTagName()</code> y <code>getElementsByClassName()</code> devuelven colecciones vivas, que reflejan cambios posteriores del DOM.</p>
+        </div>
+      </section>
+
+      <section id="referencias" class="wdm-references" aria-labelledby="tituloReferencias">
+        <p class="wdm-eyebrow">PARA SEGUIR APRENDIENDO</p><h2 id="tituloReferencias">El siguiente paso lo escribes tú.</h2><p>Modifica los ejemplos y revisa estas fuentes para profundizar en cada tema.</p>
+        <div class="wdm-source-grid"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide" target="_blank" rel="noopener noreferrer"><span>01 · MDN WEB DOCS</span><strong>Guía de JavaScript ↗</strong><small>Fundamentos y sintaxis del lenguaje</small></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document" target="_blank" rel="noopener noreferrer"><span>02 · MDN WEB DOCS</span><strong>Document y el DOM ↗</strong><small>Métodos para consultar el documento</small></a><a href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer"><span>03 · W3SCHOOLS</span><strong>JavaScript Tutorial ↗</strong><small>Explicaciones y ejemplos adicionales</small></a></div>
+        <details class="wdm-bibliography"><summary>Consultar referencias por tema</summary><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" target="_blank" rel="noopener noreferrer">Control de flujo y manejo de errores</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" target="_blank" rel="noopener noreferrer">Bucles e iteración</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" target="_blank" rel="noopener noreferrer">Funciones</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators" target="_blank" rel="noopener noreferrer">Expresiones y operadores</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener noreferrer">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank" rel="noopener noreferrer">Math</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" rel="noopener noreferrer">Date</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener noreferrer">String y formateo de texto</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections" target="_blank" rel="noopener noreferrer">Colecciones indexadas</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays" target="_blank" rel="noopener noreferrer">arreglos tipados</a></li><li><a href="https://getbootstrap.com/docs/5.3/" target="_blank" rel="noopener noreferrer">Bootstrap 5.3: grid y componentes</a></li></ul></details>
+      </section>
+
+      <footer class="wdm-footer"><a class="wdm-footer-brand" href="#inicio"><b>JS</b> JavaScript en práctica</a><span>ISW-512 · Tarea 5 · Andrés Sibaja A.</span><a href="#inicio">Inicio ↑</a></footer>
+    </main>
+    <div id="mensajeCopia" class="wdm-toast" role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>

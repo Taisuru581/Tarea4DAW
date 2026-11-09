@@ -1,0 +1,1093 @@
+
+
+:root {
+  --wdm-paper: #f6f5ef;
+  --wdm-ink: #252922;
+  --wdm-muted: #62685d;
+  --wdm-yellow: #f0cd44;
+  --wdm-line: #dedfd4;
+  --wdm-dark: #20241f;
+  --wdm-green: #456b36;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 30px;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--wdm-paper);
+  color: var(--wdm-ink);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.65;
+}
+
+#wdm-app a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#wdm-app button,
+#wdm-app input,
+#wdm-app select {
+  font: inherit;
+}
+
+#wdm-app :focus-visible {
+  outline: 3px solid #426cbb;
+  outline-offset: 4px;
+}
+
+#wdm-app code,
+#wdm-app pre {
+  font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+}
+
+#wdm-app .wdm-skip {
+  position: fixed;
+  top: -80px;
+  left: 20px;
+  padding: 12px 20px;
+  background: var(--wdm-yellow);
+  z-index: 100;
+}
+
+#wdm-app .wdm-skip:focus {
+  top: 12px;
+}
+
+/* CABECERA Y MENÚ SUPERIOR: enlaces HTML normales. */
+#wdm-app .wdm-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px 24px 0;
+}
+
+#wdm-app .wdm-header .wdm-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#wdm-app .wdm-header .wdm-header-top .wdm-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#wdm-app .wdm-header .wdm-header-top .wdm-brand .wdm-brand-icon {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 43px;
+  height: 43px;
+  padding-right: 5px;
+  background: var(--wdm-yellow);
+  color: var(--wdm-dark);
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+#wdm-app .wdm-header .wdm-header-top .wdm-brand .wdm-brand-name {
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+#wdm-app .wdm-header .wdm-header-top .wdm-brand .wdm-brand-name span {
+  display: block;
+  color: var(--wdm-muted);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+#wdm-app .wdm-header .wdm-header-top .wdm-header-course {
+  margin: 0;
+  text-align: right;
+  font-size: 12px;
+  color: var(--wdm-muted);
+}
+
+#wdm-app .wdm-header .wdm-header-top .wdm-header-course span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+#wdm-app .wdm-header .wdm-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 24px;
+  padding: 14px 0;
+  border-top: 1px solid var(--wdm-line);
+  border-bottom: 1px solid var(--wdm-line);
+}
+
+#wdm-app .wdm-header .wdm-nav .wdm-nav-link {
+  padding: 4px 0;
+  font-size: 12px;
+  color: #4e5d42;
+  text-underline-offset: 4px;
+}
+
+#wdm-app .wdm-header .wdm-nav .wdm-nav-link:hover {
+  text-decoration: underline;
+}
+
+/* CONTENIDO Y PORTADA */
+#wdm-app .wdm-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+#wdm-app .wdm-main .wdm-hero {
+  padding-top: 66px;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-eyebrow,
+#wdm-app .wdm-main .wdm-section .wdm-section-header .wdm-eyebrow,
+#wdm-app .wdm-main .wdm-references .wdm-eyebrow {
+  margin: 0 0 17px;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 1.7px;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-eyebrow span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 8px;
+  background: var(--wdm-yellow);
+}
+
+#wdm-app .wdm-main .wdm-hero h1 {
+  font-size: clamp(3.5rem, 5.5vw, 5.6rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -4px;
+  margin: 0 0 25px;
+}
+
+#wdm-app .wdm-main .wdm-hero h1 span {
+  position: relative;
+  z-index: 0;
+}
+
+#wdm-app .wdm-main .wdm-hero h1 span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: -5px;
+  bottom: 5px;
+  height: 18px;
+  background: var(--wdm-yellow);
+  z-index: -1;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-description {
+  max-width: 440px;
+  color: var(--wdm-muted);
+  font-size: 14px;
+  line-height: 1.85;
+  margin-bottom: 25px;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 13px 20px;
+  background: var(--wdm-dark);
+  border: 1px solid var(--wdm-dark);
+  border-radius: 3px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-button:hover {
+  background: #3c4635;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+  font-size: 10px;
+  color: var(--wdm-muted);
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-facts span + span::before {
+  content: "·";
+  margin-right: 14px;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code {
+  background: var(--wdm-dark);
+  color: #d9e1cf;
+  border-radius: 8px;
+  box-shadow: 10px 12px 0 #e7e7dc;
+  transform: rotate(1deg);
+  overflow: hidden;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code .wdm-code-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 18px;
+  border-bottom: 1px solid #3d4436;
+  font-family: "Consolas", monospace;
+  font-size: 9px;
+  color: #b8c0af;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code .wdm-code-top i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: #69725c;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code pre {
+  padding: 28px 21px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 2;
+  overflow-x: auto;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code pre code {
+  color: #e1e6d9;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code pre code .wdm-comment {
+  color: #a0ac91;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code pre code .wdm-keyword {
+  color: #d3a7e7;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code pre code .wdm-code-function {
+  color: #f3d76c;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code pre code .wdm-string {
+  color: #bad592;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code .wdm-hero-console {
+  margin: 0 15px 15px;
+  padding: 15px;
+  background: #30372a;
+  border-left: 2px solid var(--wdm-yellow);
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code .wdm-hero-console > span {
+  display: block;
+  color: #b1bc9f;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code .wdm-hero-console strong {
+  display: block;
+  margin-top: 7px;
+  font-family: "Consolas", monospace;
+  font-size: 16px;
+  color: #e9eedf;
+  font-weight: 400;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-code .wdm-hero-console strong .wdm-cursor {
+  margin-left: 4px;
+  color: var(--wdm-yellow);
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-caption {
+  margin-top: 25px;
+  margin-bottom: 0;
+  color: var(--wdm-muted);
+  font-size: 10px;
+  text-align: center;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-hero-caption span {
+  margin-right: 7px;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-how {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  margin-top: 54px;
+  padding: 24px 0;
+  border-top: 1px solid var(--wdm-line);
+  border-bottom: 1px solid var(--wdm-line);
+  font-size: 11px;
+  color: var(--wdm-muted);
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-how span b {
+  margin-right: 8px;
+  color: var(--wdm-ink);
+  font-family: "Consolas", monospace;
+  font-size: 10px;
+}
+
+#wdm-app .wdm-main .wdm-hero .wdm-how .wdm-how-arrow {
+  margin-left: auto;
+  font-size: 20px;
+}
+
+/* SECCIONES: el selector sigue la jerarquía de contenedores. */
+#wdm-app .wdm-main .wdm-section {
+  padding: 58px 0 50px;
+  border-bottom: 1px solid var(--wdm-line);
+  scroll-margin-top: 24px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-section-header {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  margin-bottom: 21px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-section-header .wdm-section-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 48px;
+  flex-shrink: 0;
+  background: #e9ebdf;
+  color: #4a583c;
+  border: 1px solid #d9ddcc;
+  border-radius: 4px;
+  font-family: "Consolas", monospace;
+  font-size: 15px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-section-header .wdm-eyebrow {
+  margin-bottom: 4px;
+  font-size: 9px;
+  color: #5d6853;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-section-header h2 {
+  font-size: clamp(1.5rem, 2.3vw, 2.1rem);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-section-header .wdm-section-symbol {
+  margin-left: auto;
+  padding-left: 15px;
+  color: #5c6650;
+  font-family: "Consolas", monospace;
+  font-size: 23px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-intro {
+  max-width: 780px;
+  margin: 0 0 26px;
+  color: var(--wdm-muted);
+  font-size: 14px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content code {
+  color: #466239;
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-concepts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 30px;
+  margin-bottom: 28px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-concepts-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-concepts > div {
+  border-left: 2px solid #d7dcca;
+  padding-left: 14px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-concepts dt {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-concepts dd {
+  font-size: 12px;
+  color: var(--wdm-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* LABORATORIO: controles a la izquierda, resultado a la derecha. */
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab {
+  border: 1px solid #d9ddcf;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fdfdf8;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-lab-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 11px 22px;
+  background: #eceee4;
+  border-bottom: 1px solid #d9ddcf;
+  font-size: 10px;
+  color: #5a6551;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-lab-heading span:first-child {
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 1.2px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-lab-heading span i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #668253;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo {
+  padding: 26px 24px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-input {
+  min-height: 42px;
+  border: 1px solid #cfd4c5;
+  border-radius: 3px;
+  background-color: #fff;
+  font-size: 13px;
+  color: var(--wdm-ink);
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-input:focus {
+  border-color: #7f936b;
+  box-shadow: 0 0 0 3px #e8eddc;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-hint {
+  margin: 10px 0 19px;
+  color: var(--wdm-muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 19px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-actions .wdm-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 14px;
+  background: var(--wdm-yellow);
+  border: 1px solid #e2bf36;
+  border-radius: 3px;
+  color: #282b20;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-actions .wdm-button:hover {
+  background: #e4bf32;
+  border-color: #ccaa29;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-actions .wdm-button-light {
+  padding: 10px 6px;
+  color: #5a6450;
+  border: 0;
+  font-size: 10px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result {
+  min-width: 0;
+  padding: 25px 26px;
+  background: #eef1e6;
+  border-left: 1px solid #d9ddcf;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result[data-state="error"] {
+  background: #fbede7;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-result-label {
+  margin-bottom: 18px;
+  color: #57634b;
+  font-size: 8px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-output {
+  color: #34462b;
+  font-size: 12px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result[data-state="error"] .wdm-output {
+  color: #913b2b;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-result-note {
+  margin: 14px 0 0;
+  font-size: 10px;
+  color: #58664d;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-loop-results > div {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 10px;
+  margin-bottom: 13px;
+  font-family: "Consolas", monospace;
+  font-size: 11px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-loop-results > div > span {
+  color: #566a42;
+  font-weight: 600;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-loop-results > div > p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* CÓDIGO DESPLEGABLE Y OBSERVACIONES */
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code {
+  margin-top: 12px;
+  border: 1px solid var(--wdm-line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 18px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 11px;
+  color: #4e5d42;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code summary::-webkit-details-marker {
+  display: none;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code summary:hover {
+  background: #ebede2;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code summary span b {
+  margin-right: 9px;
+  font-family: "Consolas", monospace;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code[open] summary > span:last-child {
+  transform: rotate(45deg);
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code .wdm-code-body {
+  background: var(--wdm-dark);
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code .wdm-code-body .wdm-code-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 18px;
+  border-bottom: 1px solid #3e4536;
+  color: #bcc5af;
+  font-size: 10px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code .wdm-code-body .wdm-code-toolbar .wdm-copy {
+  background: #343e2c;
+  border: 1px solid #536444;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: #e1e9d6;
+  font-size: 10px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code .wdm-code-body pre {
+  max-height: 540px;
+  overflow: auto;
+  padding: 22px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.85;
+  tab-size: 2;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-code .wdm-code-body pre code {
+  color: #d5dfc9;
+  font-size: inherit;
+  overflow-wrap: normal;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-takeaway {
+  margin: 17px 0 0;
+  font-size: 11px;
+  color: var(--wdm-muted);
+  line-height: 1.8;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-takeaway strong {
+  color: #475d35;
+  font-weight: 650;
+}
+
+/* TABLA Y PANEL DEL DOM */
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 28px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-table-wrap .wdm-table {
+  width: 100%;
+  font-size: 11px;
+  border-collapse: collapse;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-table-wrap .wdm-table caption {
+  caption-side: top;
+  color: var(--wdm-muted);
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-table-wrap .wdm-table th,
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-table-wrap .wdm-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--wdm-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-table-wrap .wdm-table thead th {
+  background: #e9ecdf;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-methods {
+  margin-top: 20px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-methods legend {
+  font-size: 11px;
+  font-weight: 600;
+  float: none;
+  margin-bottom: 8px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-methods label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 13px 9px 0;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo .wdm-form .wdm-methods label input {
+  width: 15px;
+  height: 15px;
+  accent-color: #57753f;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-dom-panel {
+  background: #fbfcf6;
+  border: 1px dashed #9ba88b;
+  border-radius: 4px;
+  padding: 18px;
+  margin-bottom: 17px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-dom-panel h3 {
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  margin-bottom: 12px;
+  font-weight: 650;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-dom-panel p {
+  padding: 5px 8px;
+  margin-bottom: 5px;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-dom-panel p.wdm-dom-description {
+  margin: 8px 0 0;
+  padding-left: 0;
+  color: #67715c;
+  font-size: 10px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-dom-panel .wdm-highlight {
+  background: #f2db80;
+  outline: 1px solid #b09b43;
+  border-radius: 2px;
+}
+
+#wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result .wdm-output-small {
+  font-size: 10px;
+}
+
+/* REFERENCIAS Y PIE */
+#wdm-app .wdm-main .wdm-references {
+  padding: 58px 0;
+}
+
+#wdm-app .wdm-main .wdm-references h2 {
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  letter-spacing: -1px;
+  font-weight: 650;
+}
+
+#wdm-app .wdm-main .wdm-references > p:not(.wdm-eyebrow) {
+  color: var(--wdm-muted);
+  font-size: 12px;
+  margin-bottom: 28px;
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-source-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-source-grid > a {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 2px solid #899a72;
+  background: #ecefe3;
+  padding: 18px 15px;
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-source-grid > a:hover {
+  background: #e4e9d9;
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-source-grid > a > span {
+  font-size: 8px;
+  letter-spacing: 1.1px;
+  color: #526542;
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-source-grid > a > strong {
+  font-size: 12px;
+  font-weight: 650;
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-source-grid > a > small {
+  font-size: 10px;
+  color: var(--wdm-muted);
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-bibliography {
+  margin-top: 24px;
+  font-size: 11px;
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-bibliography summary {
+  cursor: pointer;
+  color: #4a6038;
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-bibliography ul {
+  margin-top: 15px;
+  padding-left: 20px;
+  line-height: 2;
+}
+
+#wdm-app .wdm-main .wdm-references .wdm-bibliography ul li a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#wdm-app .wdm-main .wdm-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 0 30px;
+  border-top: 1px solid var(--wdm-line);
+  font-size: 9px;
+  color: #66705c;
+}
+
+#wdm-app .wdm-main .wdm-footer .wdm-footer-brand {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--wdm-ink);
+}
+
+#wdm-app .wdm-main .wdm-footer .wdm-footer-brand b {
+  display: inline-block;
+  padding: 0 4px;
+  margin-right: 7px;
+  color: var(--wdm-ink);
+  background: var(--wdm-yellow);
+  font-size: 14px;
+}
+
+#wdm-app .wdm-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  max-width: min(360px, calc(100vw - 48px));
+  background: var(--wdm-dark);
+  color: #f7f8ef;
+  padding: 0;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 30;
+}
+
+#wdm-app .wdm-toast:not(:empty) {
+  padding: 12px 20px;
+  border: 1px solid #687c50;
+}
+
+#wdm-app .wdm-main .wdm-noscript {
+  padding: 20px;
+  margin-top: 20px;
+  background: #f7e0a9;
+}
+
+/* TABLET: el menú se acomoda en varias líneas. */
+@media (max-width: 1199.98px) {
+  #wdm-app .wdm-main .wdm-hero {
+    padding-top: 45px;
+  }
+
+  #wdm-app .wdm-main .wdm-hero .wdm-hero-code {
+    max-width: 600px;
+    transform: none;
+  }
+
+  #wdm-app .wdm-main .wdm-hero .wdm-hero-code pre {
+    font-size: 13px;
+  }
+
+  #wdm-app .wdm-main .wdm-hero .wdm-hero-caption {
+    text-align: left;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result {
+    border-left: 0;
+    border-top: 1px solid #d9ddcf;
+  }
+}
+
+/* MÓVIL: columnas únicas y tamaños legibles. */
+@media (max-width: 575.98px) {
+  #wdm-app .wdm-main {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  #wdm-app .wdm-header {
+    padding: 20px 22px 0;
+  }
+
+  #wdm-app .wdm-header .wdm-header-top {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  #wdm-app .wdm-header .wdm-header-top .wdm-header-course {
+    max-width: 140px;
+    font-size: 10px;
+  }
+
+  #wdm-app .wdm-header .wdm-header-top .wdm-header-course span {
+    font-size: 9px;
+  }
+
+  #wdm-app .wdm-header .wdm-nav {
+    gap: 4px 12px;
+    margin-top: 20px;
+  }
+
+  #wdm-app .wdm-header .wdm-nav .wdm-nav-link {
+    flex-basis: calc(50% - 6px);
+    padding: 6px 0;
+    font-size: 11px;
+  }
+
+  #wdm-app .wdm-main .wdm-hero {
+    padding-top: 36px;
+  }
+
+  #wdm-app .wdm-main .wdm-hero > .row {
+    --bs-gutter-x: 2rem;
+  }
+
+  #wdm-app .wdm-main .wdm-hero h1 {
+    font-size: clamp(3.1rem, 14vw, 4.5rem);
+    letter-spacing: -2.5px;
+  }
+
+  #wdm-app .wdm-main .wdm-hero .wdm-hero-description {
+    font-size: 13px;
+  }
+
+  #wdm-app .wdm-main .wdm-hero .wdm-hero-code pre {
+    font-size: 10px;
+    padding: 22px 16px;
+  }
+
+  #wdm-app .wdm-main .wdm-hero .wdm-hero-code .wdm-hero-console strong {
+    font-size: 14px;
+  }
+
+  #wdm-app .wdm-main .wdm-hero .wdm-how {
+    gap: 12px 18px;
+    margin-top: 36px;
+    padding: 20px 0;
+    font-size: 10px;
+  }
+
+  #wdm-app .wdm-main .wdm-hero .wdm-how .wdm-how-arrow {
+    display: none;
+  }
+
+  #wdm-app .wdm-main .wdm-section {
+    padding: 38px 0;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-section-header {
+    gap: 12px;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-section-header .wdm-section-number {
+    width: 33px;
+    height: 42px;
+    font-size: 12px;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-section-header .wdm-section-symbol {
+    display: none;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-section-header .wdm-eyebrow {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-intro {
+    font-size: 13px;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-concepts,
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-concepts-three {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-lab-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-demo,
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-lab .wdm-result {
+    padding: 22px 17px;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-code .wdm-code-body .wdm-code-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-table-wrap .wdm-table th,
+  #wdm-app .wdm-main .wdm-section .wdm-content .wdm-table-wrap .wdm-table td {
+    padding: 10px 8px;
+    font-size: 10px;
+  }
+
+  #wdm-app .wdm-main .wdm-references .wdm-source-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #wdm-app .wdm-main .wdm-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
